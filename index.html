@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Temperature Converter</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        Convert Temperature
+    </header>
+
+
+    <form id="f2c">
+        <p>
+            <label> Fahrenheit: </label>
+            <input id="inputFahrenheit" type="number" placeholder="Enter Fahrenheit"
+                oninput="convetfahrenheit(this.value)" onchange="convet(this.value)">
+
+        </p>
+        <br>
+        <br>
+        <p>
+            <label>Celcius : </label> <span id="outputcelcius" style="background-color: white;color: red;  ">0</span>
+
+
+        </p>
+        <br><br><br>
+        <button type="reset">RESET</button>
+        </form>
+
+    <form id="c2f">
+        <p>
+            <label>Celcius: </label>
+            <input id="inputCelcius<" type="number" placeholder="Enter Celcius" oninput="convetcelcius(this.value)"
+                onchange="convet(this.value)">
+
+        </p>
+        <br>
+        <br>
+        <p>
+            <label>Fahrenheit : </label> <span id="outputfahrenheit"
+                style="background-color: white;color: red; ">0</span>
+</p>
+<br><br><br>
+                <button type="reset">RESET</button>
+    </form>
+
+
+    <script>
+        function convetfahrenheit(valNum) {
+            valNum = parseFloat(valNum);
+
+            document.getElementById("outputcelcius").innerHTML = (valNum - 32) / 1.8;
+
+        }
+
+        function convetcelcius(valNum) {
+            valNum = parseFloat(valNum);
+
+            document.getElementById("outputfahrenheit").innerHTML = (valNum * (9 / 5)) + 32;
+
+        }
+    </script>
+</body>
+
+</html>
